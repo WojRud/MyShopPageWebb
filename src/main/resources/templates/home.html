@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        #head-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #head-container div {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        #head-container span {
+            margin-left: 1px;
+        }
+
+        #head-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1px;
+        }
+
+        #logo img {
+            width: 123px;
+            height: 55px;
+        }
+
+        #favorites {
+            padding-left: 30%;
+        }
+
+        #swipe-container {
+            width: 70%;
+            height: 160px;
+            margin-top: 10px;
+            background-color: #333;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #swipe-content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .swipe-item {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        #left-div {
+            float: left;
+            width: 20%;
+            height: 600px;
+            background-color: lightblue;
+        }
+
+        #right-div {
+            float: left;
+            width: 80%;
+            min-height: 600px;
+            background-color: lightcoral;
+        }
+
+        #container {
+            width: 70%;
+            height: 160px;
+            background-color: aqua;
+        }
+
+        #container:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .tool-categories {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            height: 40px;
+            margin-top: 5px;
+            text-align: center;
+            background-color: aqua;
+        }
+
+        @media (max-width: 768px) {
+            #head-container {
+                flex-direction: column;
+            }
+
+            #head-container div {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="head-container">
+            <div id="logo">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\img\shoplogo.png" alt="Logo">
+                <span>We follow the latest trends.</span>
+            </div>
+
+            <div id="favorites">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\img\favorite-icon.png" alt="favorites">
+                <span>Favorites</span>
+            </div>
+
+            <div id="user-info">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\img\user-icon.png" alt="user-info">
+                <span>User Name</span>
+            </div>
+
+            <div id="basket">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\img\shopping-card-icon.png" alt="basket">
+                <span>0.00 PLN</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="swipe-container">
+        <div id="swipe-content">
+            <div class="swipe-item">Zdjęcie 1</div>
+            <div class="swipe-item">Zdjęcie 2</div>
+            <div class="swipe-item">Zdjęcie 3</div>
+        </div>
+    </div>
+
+    <script>
+        const swipeContainer = document.getElementById('swipe-container');
+        const swipeContent = document.getElementById('swipe-content');
+        const swipeItems = document.querySelectorAll('.swipe-item');
+
+        let currentIndex = 0;
+
+        const moveLeft = () => {
+            currentIndex = (currentIndex - 1 + swipeItems.length) % swipeItems.length;
+            updateTransform();
+        };
+
+        const moveRight = () => {
+            currentIndex = (currentIndex + 1) % swipeItems.length;
+            updateTransform();
+        };
+
+        const updateTransform = () => {
+            const swipeItemWidth = swipeItems[0].offsetWidth;
+            swipeContent.style.transform = `translateX(-${currentIndex * swipeItemWidth}px)`;
+        };
+
+        setInterval(() => {
+            moveRight();
+        }, 3000);
+    </script>
+
+    <div id="container">
+        <div id="left-div">
+            <div id="tools-categories-container">
+                <div class="tool-categories">Pick</div>
+                <div class="tool-categories">Shovel</div>
+                <div class="tool-categories">Axe</div>
+                <div class="tool-categories">Hammer</div>
+                <div class="tool-categories">Drill</div>
+            </div>
+        </div>
+
+        <div id="right-div">
+            right
+        </div>
+    </div>
+
+</body>
+
+</html>
