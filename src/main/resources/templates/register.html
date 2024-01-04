@@ -93,7 +93,7 @@
 <header>
     <div id="head-container">
         <div id="logo">
-            <img src=# alt="Logo">
+            <img src="C:\Users\wojci\StudioWeb\MyShop\img\shoplogo.png" alt="Logo">
             <span>We follow the latest trends.</span>
         </div>
     </div>
@@ -103,32 +103,32 @@
     <h2>Registration</h2>
     <form class="col-5" th:action="@{/registerUser}" th:object="${user}" method="POST">
 
-        <label for="firstName">First Name:</label>
-        <input type="text" th:text="#{name}" id="firstName" name="firstName" required>
+           <label for="firstname">First Name:</label>
+           <input type="text" th:text="#{name}" id="firstname" name="firstName" required>
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" th:text="#{lastname}" id="lastName" name="lastName" required>
+           <label for="lastName">Last Name:</label>
+           <input type="text" th:text="#{lastname}" id="lastName" name="lastName" required>
 
-        <label for="city">City:</label>
-        <input type="text" th:text="#{city}" id="city" name="city" required>
+           <label for="city">City:</label>
+           <input type="text" th:text="#{city}" id="city" name="city" required>
 
-        <label for="street">Street:</label>
-        <input type="text" th:text="#{street}" id="street" name="street" required>
+           <label for="street">Street:</label>
+           <input type="text" th:text="#{street}" id="street" name="street" required>
 
-        <label for="houseNumber">House Number:</label>
-        <input type="text" th:text="#{housenumber}" id="houseNumber" name="houseNumber" required>
+           <label for="houseNumber">House Number:</label>
+           <input type="text" th:text="#{housenumber}" id="houseNumber" name="houseNumber" required>
 
-        <label for="postalCode">Postal Code:</label>
-        <input type="text" th:text="#{postalcode}" id="postalCode" name="postalCode" required>
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" th:text="#{postalcode}" id="postalCode" name="postalCode" required>
 
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" th:text="#{phone}" id="phoneNumber" name="phoneNumber" required>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" th:text="#{phone}" id="phoneNumber" name="phoneNumber" required>
 
-        <label for="email">Email:</label>
-        <input type="email" th:text="#{email}" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" th:text="#{email}" id="email" name="email" required>
 
-        <label for="password">Password:</label>
-        <input type="password" th:text="#{password}" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" th:text="#{password}" id="password" name="password" required>
 
         <button type="submit">Register</button>
     </form>

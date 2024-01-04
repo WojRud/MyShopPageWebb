@@ -20,11 +20,10 @@ public class SecurityConfig {
 
         httpSecurity
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers( "/home", "/registerUser").permitAll()
+                        .requestMatchers( "/home", "/registerUser", "/error", "/test").permitAll()
                         .anyRequest().authenticated()
                 );
 
         return httpSecurity.build();
     }
 }
-// test

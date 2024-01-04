@@ -1,5 +1,6 @@
 package com.dailycode.MyShop;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
 
+    @Autowired
+    private UserService service;
+
     @GetMapping("/home")
     public String register(Model model) {
         User user = new User();
@@ -17,10 +21,12 @@ public class UserController {
         return "register";
     }
 
-
-
     @PostMapping("/registerUser")
     public String registerUser(@ModelAttribute("user") User user) {
+
+  //      user.setLastname(generateId());
+
+        service.registerUser(user);
 
         System.out.println(user);
 
@@ -28,3 +34,4 @@ public class UserController {
     }
 
 }
+

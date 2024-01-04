@@ -1,8 +1,7 @@
 package com.dailycode.MyShop;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Setter;
 
 /*
 import lombok.AllArgsConstructor;
@@ -14,12 +13,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
  */
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User {
 
-    private String name;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    @Setter
     private String lastname;
+
     private String city;
     private String street;
     private String housenumber;
