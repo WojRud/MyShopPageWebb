@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,7 +50,6 @@
             width: 123px;
             height: 55px;
         }
-
 
         .registration-container {
             width: 300px;
@@ -100,41 +99,21 @@
 </header>
 
 <div class="registration-container">
-    <h2>Registration</h2>
-    <form class="col-5" th:action="@{/registerUser}" th:object="${user}" method="POST">
-
-           <label for="firstname">First Name:</label>
-           <input type="text" th:text="#{name}" id="firstname" name="firstName" required>
-
-           <label for="lastName">Last Name:</label>
-           <input type="text" th:text="#{lastname}" id="lastName" name="lastName" required>
-
-           <label for="city">City:</label>
-           <input type="text" th:text="#{city}" id="city" name="city" required>
-
-           <label for="street">Street:</label>
-           <input type="text" th:text="#{street}" id="street" name="street" required>
-
-           <label for="houseNumber">House Number:</label>
-           <input type="text" th:text="#{housenumber}" id="houseNumber" name="houseNumber" required>
-
-            <label for="postalCode">Postal Code:</label>
-            <input type="text" th:text="#{postalcode}" id="postalCode" name="postalCode" required>
-
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" th:text="#{phone}" id="phoneNumber" name="phoneNumber" required>
-
-            <label for="email">Email:</label>
-            <input type="email" th:text="#{email}" id="email" name="email" required>
-
-            <label for="password">Password:</label>
-            <input type="password" th:text="#{password}" id="password" name="password" required>
-
-        <button type="submit">Register</button>
+    <h2>Login</h2>
+    <!-- Display login error message if any -->
+    <div th:if="${param.error}">
+        <p style="color: red;">Invalid username or password.</p>
+    </div>
+    <form th:action="@{/userLogin}" th:object="${user}" method="post">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" th:field="*{email}" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" th:field="*{password}" required>
+        <br>
+        <button type="submit">Login</button>
     </form>
 </div>
-
-
 
 </body>
 </html>

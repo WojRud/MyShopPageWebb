@@ -8,30 +8,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
+
 @Controller
 public class UserController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
-    @GetMapping("/home")
-    public String register(Model model) {
-        User user = new User();
-        model.addAttribute("user", user);
-        return "register";
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        model.addAttribute("user", new User());
+        return "login";
     }
 
-    @PostMapping("/registerUser")
-    public String registerUser(@ModelAttribute("user") User user) {
-
-  //      user.setLastname(generateId());
-
-        service.registerUser(user);
-
-        System.out.println(user);
-
-        return "home";
+    @PostMapping("/userLogin")
+    public String loginUser(@ModelAttribute("user") User user) {
+        // Check user credentials and redirect accordingly
+        if (userService.isValidUser(user.getEmail(), user.getPassword())) {
+            return "/home";
+        } else {
+            return "error";
+        }
     }
-
 }
+
 
