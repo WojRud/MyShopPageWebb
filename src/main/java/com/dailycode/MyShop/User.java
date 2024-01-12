@@ -19,22 +19,18 @@ import lombok.NoArgsConstructor;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype", discriminatorType = DiscriminatorType.STRING)
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     @Setter
     private String lastname;
-
     private String city;
     private String street;
     private String housenumber;
     private String postalcode;
     private String phone;
+    @Column(unique = true)
     private String email;
     private String password;
-
 }

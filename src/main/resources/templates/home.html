@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
     <title>Responsive Page</title>
     <style>
         body {
@@ -144,7 +144,7 @@
 
             <div id="user-info">
                 <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user-info">
-                <span>User Name</span>
+                <span th:text="${user.name}"></span>
             </div>
 
             <div id="basket">
@@ -162,7 +162,7 @@
         </div>
     </div>
 
-    <script>
+<script>
         const swipeContainer = document.getElementById('swipe-container');
         const swipeContent = document.getElementById('swipe-content');
         const swipeItems = document.querySelectorAll('.swipe-item');
@@ -187,8 +187,13 @@
         setInterval(() => {
             moveRight();
         }, 3000);
-    </script>
 
+
+
+    const email = localStorage.getItem("email");
+
+
+</script>
     <div id="container">
         <div id="left-div">
             <div id="tools-categories-container">
