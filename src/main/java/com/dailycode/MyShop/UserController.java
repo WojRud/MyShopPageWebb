@@ -51,13 +51,25 @@ public class UserController {
     }
 
 
-
-
     @GetMapping("/register")
     public String showRegistrationForm() {
         return "register";
     }
 
+
+    //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO
+    @GetMapping("/show-data/{email}")
+    @ResponseBody
+    public String pokazDane(@PathVariable String email, Model model) {
+        User userFound = userService.findByEmail(email);
+
+        if (userFound != null) {
+            model.addAttribute("user", userFound);
+            return "show-data";
+        } else {
+            return "error";
+        }
+    }
 
 
 

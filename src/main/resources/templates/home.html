@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -145,6 +145,7 @@
             <div id="user-info">
                 <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user-info">
                 <span th:text="${user.name}"></span>
+
             </div>
 
             <div id="basket">
@@ -191,6 +192,22 @@
 
 
     const email = localStorage.getItem("email");
+
+    alert(email)
+
+        //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO    //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO
+        // Przy użyciu JavaScript i AJAX do wysłania żądania do kontrolera Spring
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `/show-data/${email}`, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Obsługa odpowiedzi od serwera (możesz coś zrobić z odpowiedzią, na przykład wyświetlić wyniki)
+                console.log(xhr.responseText);
+            }
+        };
+
+        xhr.send();
 
 
 </script>
