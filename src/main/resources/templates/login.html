@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js"></script>
 </head>
 <body>
 
@@ -34,25 +35,6 @@
     Don't have an account? <a th:href="@{/register}">Register</a>
 </div>
 
-<script>
-
-    function test() {
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const loginButton = document.getElementById("loginButton");
-
-        if (loginButton) {
-            loginButton.addEventListener("click", test);
-        }
-    });
-
-</script>
 </body>
 </html>
 

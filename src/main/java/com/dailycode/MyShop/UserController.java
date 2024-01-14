@@ -50,11 +50,23 @@ public class UserController {
         }
     }
 
-
     @GetMapping("/register")
     public String showRegistrationForm() {
         return "register";
     }
+    @GetMapping("/account")
+    public String showAccountProfile() {
+        return "account";
+    }
+    @GetMapping("/myorders")
+    public String showMyOrders() {
+        return "myorders";
+    }
+    @GetMapping("/editdata")
+    public String showEditData() {
+        return "editdata";
+    }
+
 
 
     //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO

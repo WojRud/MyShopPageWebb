@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
+    <title>Change Your Data</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +51,7 @@
             height: 55px;
         }
 
-        .registration-container {
+        .changeData-container {
             width: 300px;
             padding: 20px;
             border: 1px solid #ccc;
@@ -60,19 +60,19 @@
             margin-top: 60px;
         }
 
-        .registration-container label {
+        .changeData-container label {
             display: block;
             margin-bottom: 8px;
         }
 
-        .registration-container input {
+        .changeData-container input {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
             box-sizing: border-box;
         }
 
-        .registration-container button {
+        .changeData-container button {
             background-color: #4caf50;
             color: white;
             padding: 10px;
@@ -82,7 +82,7 @@
             width: 100%;
         }
 
-        .registration-container button:hover {
+        .changeData-container button:hover {
             background-color: #45a049;
         }
     </style>
@@ -98,38 +98,38 @@
     </div>
 </header>
 
-<div class="registration-container">
-    <h2>Registration</h2>
+<div class="changeData-container">
+    <h2>Change Data</h2>
     <form class="col-5" th:action="@{/registerUser}" th:object="${user}" method="POST">
 
-           <label for="firstname">First Name:</label>
-           <input type="text" th:text="#{name}" id="firstname" name="firstName" required>
+        <label for="firstname">First Name:</label>
+        <input type="text" th:text="#{name}" id="firstname" name="firstName" required>
 
-           <label for="lastName">Last Name:</label>
-           <input type="text" th:text="#{lastname}" id="lastName" name="lastName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" th:text="#{lastname}" id="lastName" name="lastName" required>
 
-           <label for="city">City:</label>
-           <input type="text" th:text="#{city}" id="city" name="city" required>
+        <label for="city">City:</label>
+        <input type="text" th:text="#{city}" id="city" name="city" required>
 
-           <label for="street">Street:</label>
-           <input type="text" th:text="#{street}" id="street" name="street" required>
+        <label for="street">Street:</label>
+        <input type="text" th:text="#{street}" id="street" name="street" required>
 
-           <label for="houseNumber">House Number:</label>
-           <input type="text" th:text="#{housenumber}" id="houseNumber" name="houseNumber" required>
+        <label for="houseNumber">House Number:</label>
+        <input type="text" th:text="#{housenumber}" id="houseNumber" name="houseNumber" required>
 
-            <label for="postalCode">Postal Code:</label>
-            <input type="text" th:text="#{postalcode}" id="postalCode" name="postalCode" required>
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" th:text="#{postalcode}" id="postalCode" name="postalCode" required>
 
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" th:text="#{phone}" id="phoneNumber" name="phoneNumber" required>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" th:text="#{phone}" id="phoneNumber" name="phoneNumber" required>
 
-            <label for="email">Email:</label>
-            <input type="email" th:text="#{email}" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" th:text="#{email}" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" th:text="#{password}" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" th:text="#{password}" id="password" name="password" required>
 
-        <button type="submit">Register</button>
+        <button type="submit">Change Data</button>
     </form>
 </div>
 
