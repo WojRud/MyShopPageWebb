@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+#head-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#head-container div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+#head-container span {
+    margin-left: 1px;
+}
+
+#head-container img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1px;
+}
+
+#logo img {
+    width: 123px;
+    height: 55px;
+}
+
+#favorites {
+    padding-left: 30%;
+}
+
+#container {
+    width: 60%;
+    height: 160px;
+    margin-top: 10%;
+}
+
+#container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tool-categories {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100px;
+    text-align: center;
+    border: 2px solid black;
+    background-color: #ffffff;
+}
+
+.tool-categories button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tool-categories {
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-categories::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.tool-categories:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #head-container {
+        flex-direction: column;
+    }
+
+    #head-container div {
+        margin-bottom: 10px;
+    }
+
+    .tool-categories {
+        width: 60%;
+    }
+
+    #container {
+        width: 100%;
+    }
+}

@@ -34,6 +34,11 @@ public class UserController {
 
 
 
+    @GetMapping("/home")
+    public String homePage(Model model) {
+        model.addAttribute("user", new User());
+        return "home";
+    }
 
     @GetMapping("/login")
     public String showLoginForm(Model model) {
@@ -44,9 +49,9 @@ public class UserController {
     @PostMapping("/userLogin")
     public String loginUser(@ModelAttribute("user") User user) {
         if (userService.isValidUser(user.getEmail(), user.getPassword())) {
-            return "/home";
+            return "home";
         } else {
-            return "/login";
+            return "login";
         }
     }
 
@@ -63,16 +68,14 @@ public class UserController {
         return "myorders";
     }
     @GetMapping("/editdata")
-    public String showEditData() {
-        return "editdata";
-    }
+    public String showEditData() { return "editdata"; }
 
 
 
     //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO
     @GetMapping("/show-data/{email}")
     @ResponseBody
-    public String pokazDane(@PathVariable String email, Model model) {
+    public String showData(@PathVariable String email, Model model) {
         User userFound = userService.findByEmail(email);
 
         if (userFound != null) {
