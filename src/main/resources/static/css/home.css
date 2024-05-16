@@ -20,13 +20,13 @@ header {
 #head-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around; /* Changed from 'center' */
 }
 
 #head-container div {
     display: flex;
     align-items: center;
-    margin: 0 10px;
+    /* margin: 0 10px; Remove this line */
 }
 
 #head-container span {
@@ -45,7 +45,7 @@ header {
 }
 
 #favorites {
-    padding-left: 30%;
+    /* padding-left: 30%; Remove this line */
 }
 
 #swipe-container {

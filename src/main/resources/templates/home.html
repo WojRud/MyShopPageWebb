@@ -10,31 +10,33 @@
 
 <body>
 
-    <header>
-        <div id="head-container">
-            <div id="logo">
-                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
-                <span>We follow the latest trends.</span>
-            </div>
+<header>
+    <div id="head-container">
+        <div id="logo">
+            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
+            <span>We follow the latest trends.</span>
+        </div>
 
+        <a th:href="@{/account}">
             <div id="favorites">
                 <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\favorite-icon.png" alt="favorites">
                 <span>Favorites</span>
             </div>
+        </a>
 
-            <a th:href="@{/account}">
+        <a th:href="@{/account}">
             <div id="user-info"> xdxd
                 <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user-info">
-                <span th:text="${user.name}"></span>
-
+                <span th:text="${email}"></span>
             </div>
-            </a>
-            <div id="basket">
-                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shopping-card-icon.png" alt="basket">
-                <span>0.00 PLN</span>
-            </div>
+        </a>
+        <div id="basket">
+            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shopping-card-icon.png" alt="basket">
+            <span>0.00 PLN</span>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <div id="swipe-container">
         <div id="swipe-content">
@@ -104,7 +106,14 @@
         </div>
 
         <div id="right-div">
-            right
+            <h2>Product List</h2>
+            <ul>
+                <li th:each="product : ${products}">
+                    <span th:text="${product.name}"></span>
+                    <span th:text="${product.desc}"></span>
+                    <span th:text="${product.price}"></span>
+                </li>
+            </ul>
         </div>
     </div>
 
