@@ -20,13 +20,11 @@ header {
 #head-container {
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Changed from 'center' */
 }
 
 #head-container div {
     display: flex;
     align-items: center;
-    /* margin: 0 10px; Remove this line */
 }
 
 #head-container span {
@@ -42,10 +40,12 @@ header {
 #logo img {
     width: 123px;
     height: 55px;
+    margin-left: 10%;
 }
 
 #favorites {
-    /* padding-left: 30%; Remove this line */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #swipe-container {
