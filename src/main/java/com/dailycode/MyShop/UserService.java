@@ -8,10 +8,6 @@ public interface UserService {
     boolean isValidUser(String email, String password);
     void registerUser(User user);
 
-
-
-
-
     User findByEmail(String email);
 
 }
