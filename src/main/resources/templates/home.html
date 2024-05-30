@@ -11,32 +11,27 @@
 <body>
 
 <header>
-    <div id="head-container">
-        <div id="logo">
+   <div id="logo">
             <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
             <span>We follow the latest trends.</span>
-        </div>
+   </div>
+   <div id="head-items">
 
-        <a th:href="@{/account}">
-            <div id="favorites">
-                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\favorite-icon.png" alt="favorites">
-                <span>Favorites</span>
+            <div class="inside-head-items">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\favorite-icon.png" alt="fav">
             </div>
-        </a>
 
-        <a th:href="@{/account}">
-            <div id="user-info"> xdxd
-                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user-info">
+            <div class="inside-head-items">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user">
                 <span th:text="${email}"></span>
             </div>
-        </a>
-        <div id="basket">
-            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shopping-card-icon.png" alt="basket">
+
+        <div class="inside-head-items">
+            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shopping-card-icon.png" alt="bask">
             <span>0.00 PLN</span>
         </div>
-    </div>
+   </div>
 </header>
-
 
     <div id="swipe-container">
         <div id="swipe-content">
