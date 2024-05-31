@@ -1,1 +1,56 @@
-my orders
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/myorders.css">
+    <title>Basket</title>
+</head>
+<body>
+
+<header>
+    <div id="logo">
+        <a href="home">
+            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
+            <span>We follow the latest trends.</span>
+        </a>
+    </div>
+    <div id="head-items">
+        <div class="inside-head-items">
+            <a href="fav">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\favorite-icon.png" alt="fav">
+            </a>
+        </div>
+
+        <div class="inside-head-items">
+            <a href="account">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\user-icon.png" alt="user">
+                <span th:text="${email}"></span>
+            </a>
+        </div>
+
+        <div class="inside-head-items">
+            <a href="basket">
+                <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shopping-card-icon.png" alt="bask">
+                <span>0.00 PLN</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div id="container">
+    <h2>Order History</h2>
+    <div id="product-container">
+        <ul>
+            <li th:each="product : ${products}">
+                <span th:text="${product.name}"></span>
+                <span th:text="${product.desc}"></span>
+                <span th:text="${product.price}"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+</html>

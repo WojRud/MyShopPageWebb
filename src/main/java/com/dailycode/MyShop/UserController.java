@@ -55,6 +55,15 @@ public class UserController {
     @GetMapping("/editdata")
     public String showEditData() { return "editdata"; }
 
+    @GetMapping("/fav")
+    public String showFav() { return "fav"; }
+
+    @GetMapping("/user")
+    public String showUser() { return "user"; }
+
+    @GetMapping("/basket")
+    public String showBasket() { return "basket"; }
+
     @GetMapping("/show-data/{email}")
     @ResponseBody
     public String showData(@PathVariable String email, Model model) {

@@ -10,43 +10,27 @@ body {
     align-items: center;
     text-align: center;
 }
-
 header {
     width: 100%;
     background-color: #333;
     color: white;
     padding: 10px;
-}
-
-#head-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#head-container div {
+#logo {
+    flex: 2;
+    margin-left: auto;
+}
+
+#head-items {
+    flex: 1;
+    margin-left: auto;
     display: flex;
-    align-items: center;
-    margin: 0 10px;
 }
 
-#head-container span {
-    margin-left: 1px;
-}
-
-#head-container img {
-    width: 40px;
-    height: 40px;
-    margin-right: 1px;
-}
-
-#logo img {
-    width: 123px;
-    height: 55px;
-}
-
-#favorites {
-    padding-left: 30%;
+.inside-head-items {
+    margin-right: 10%;
 }
 
 #container {

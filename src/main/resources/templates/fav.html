@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/account.css">
-    <title>My Account</title>
+    <link rel="stylesheet" href="/css/fav.css">
+    <title>Favorites</title>
 </head>
-
 <body>
 
 <header>
     <div id="logo">
         <a href="home">
-        <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
-        <span>We follow the latest trends.</span>
+            <img src="C:\Users\wojci\StudioWeb\MyShop\src\main\resources\img\shoplogo.png" alt="Logo">
+            <span>We follow the latest trends.</span>
         </a>
     </div>
     <div id="head-items">
@@ -40,24 +38,16 @@
     </div>
 </header>
 
-<script>
-
-
-
-</script>
-
 <div id="container">
-    <div id="tools-categories-container">
-        <div class="tool-categories">
-            <a href="myorders">
-            <button th:href="@{/myorders}">My Orders</button>
-            </a>
-        </div>
-        <div class="tool-categories">
-            <a href="user">
-            <button th:href="@{/editdata}">Edit Data</button>
-            </a>
-        </div>
+    <h2>My favorite products</h2>
+    <div id="product-container">
+        <ul>
+            <li th:each="product : ${products}">
+                <span th:text="${product.name}"></span>
+                <span th:text="${product.desc}"></span>
+                <span th:text="${product.price}"></span>
+            </li>
+        </ul>
     </div>
 </div>
 
