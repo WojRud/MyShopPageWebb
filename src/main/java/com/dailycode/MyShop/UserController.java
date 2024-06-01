@@ -12,6 +12,7 @@ public class UserController {
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
+
         User user = new User();
         model.addAttribute("user", user);
         return "register";
@@ -19,6 +20,7 @@ public class UserController {
 
     @PostMapping("/registerUser")
     public String registerUser(@ModelAttribute("user") User user) {
+        System.out.println(user);
         userService.registerUser(user);
         return "redirect:/login";
     }

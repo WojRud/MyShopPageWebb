@@ -11,13 +11,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-    //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
 
     @Override
     public boolean isValidUser(String email, String password) {
@@ -30,13 +27,8 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-
-
-    //////////////////////////////    ////////////////////////////////////////DODANO    ////////////////////////////////////////DODANO//////////DODANO
     @Override
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
-
-
 }
