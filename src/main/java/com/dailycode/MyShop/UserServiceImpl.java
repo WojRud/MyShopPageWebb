@@ -3,22 +3,32 @@ package com.dailycode.MyShop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserRepo userRepo;
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
+        super();
         this.userRepository = userRepository;
+    }
+
+
+
+
+
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     @Override
     public boolean isValidUser(String email, String password) {
-        User user = userRepo.findByEmail(email);
+        User user = userRepository.findByEmail(email);
         return user != null && user.getPassword().equals(password);
     }
 

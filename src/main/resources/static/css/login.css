@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background: #222;
+    background-color: #2a2a2a;
     color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center;
 }
 
 header {
@@ -15,35 +16,22 @@ header {
     background-color: #333;
     color: white;
     padding: 10px;
-    position: fixed;
-    top: 0;
-}
-
-#head-container {
     display: flex;
-    align-items: center;
-    margin-left: 15%;
 }
 
-#head-container div {
+#logo {
+    flex: 2;
+    margin-left: auto;
+}
+
+#head-items {
+    flex: 1;
+    margin-left: auto;
     display: flex;
-    align-items: center;
-    margin: 0 10px;
 }
 
-#head-container span {
-    margin-left: 1px;
-}
-
-#head-container img {
-    width: 40px;
-    height: 40px;
-    margin-right: 1px;
-}
-
-#logo img {
-    width: 123px;
-    height: 55px;
+.inside-head-items {
+    margin-right: 10%;
 }
 
 .registration-container {

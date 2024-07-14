@@ -49,13 +49,18 @@
 <div id="container">
     <div id="tools-categories-container">
         <div class="tool-categories">
-            <a href="myorders">
-            <button th:href="@{/myorders}">My Orders</button>
+            <a th:href="@{/myorders}">
+                <button>My Orders</button>
             </a>
         </div>
         <div class="tool-categories">
-            <a href="user">
-            <button th:href="@{/editdata}">Edit Data</button>
+            <a th:href="@{/editdata}">
+                <button>Edit Data</button>
+            </a>
+        </div>
+        <div class="tool-categories">
+            <a th:href="@{/logout}">
+                <button>Log Out</button>
             </a>
         </div>
     </div>
